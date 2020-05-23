@@ -39,6 +39,10 @@ app.post("/add", addWitherData);
 
 function addWitherData(req, res) {
   console.log(req.body);
-  data.push(req.body);
-  res.send(JSON.stringify(data));
+  
+  projectData.temperature = req.body.temperature
+  projectData.date = req.body.date
+  projectData.user_response = req.body.user_response
+
+  res.send(JSON.stringify(projectData));
 }
